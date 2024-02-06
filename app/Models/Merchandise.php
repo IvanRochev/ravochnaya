@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Merchandise extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'about',
+        'price'
+    ];
+
+    public function merchandises_photos() {
+        return $this->hasMany(MerchandisePhoto::class);
+    }
 }

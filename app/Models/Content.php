@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'url',
+        'type' 
+    ];
+
+    public function events() {
+        return $this->belongsTo(Event::class);
+    }
 }

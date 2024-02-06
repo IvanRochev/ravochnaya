@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('residents', function (Blueprint $table) {
+        Schema::create('residents_tags', function (Blueprint $table) {
             $table->id();
-            $table->string('nickname')->unique();
-            $table->string('fio');
-            $table->text('about')->nullable();
-            $table->string('photo', 255);
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('residents');
+        Schema::dropIfExists('residents_tags');
     }
 };

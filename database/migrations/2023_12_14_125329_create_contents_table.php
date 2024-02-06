@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('url', 255);
+            $table->string('type',)->comment('Type of content, like photo, video etc.');
             $table->timestamps();
         });
     }

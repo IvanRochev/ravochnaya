@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class MerchandisePhoto extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'merchandise_id',
+        'position',
+        'url',
+        'name'
+    ];
+
+    public function merchandises() {
+        return $this->belongsTo(Merchandise::class);
+    }
 }

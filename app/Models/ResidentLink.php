@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class ResidentLink extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'social',
+        'link',
+        'resident_id'
+    ];
+
+    public function residents() {
+        return $this->belongsTo(Resident::class);
+    }
 }

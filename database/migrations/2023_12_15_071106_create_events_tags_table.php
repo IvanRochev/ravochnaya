@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('events_tags', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            /// описание pivot отношений до 7 лары ///
+            // $table->unsignedBigInteger('event_id');
+            // $table->foreign('event_id')->references('id')->on('events');
+            // $table->unsignedBigInteger('tag_id');
+            // $table->foreign('tag_id')->references('id')->on('tags');
+
+            /// их рефактор для актуальных версий/// 
+            $table->foreignId('event_id')->constrained();
+            $table->foreignId('tag_id')->constrained();
         });
     }
 

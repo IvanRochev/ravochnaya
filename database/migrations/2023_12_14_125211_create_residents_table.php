@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nickname')->unique();
             $table->string('fio');
-            $table->string('role');
+            $table->integer('role');
             $table->text('about')->nullable();
             $table->string('photo', 255);
             $table->boolean('deleted')->default(0);

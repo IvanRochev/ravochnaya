@@ -18,7 +18,7 @@ class ContentFactory extends Factory
     {
         $name = $this->faker->sentence(15, true);
         $url = '/img/1.png';
-        $type = 'local_storage';
+        $type = '1';
 
         return [
             'name' => $name,

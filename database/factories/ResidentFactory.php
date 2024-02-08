@@ -18,7 +18,7 @@ class ResidentFactory extends Factory
     {
         $nickname = $this->faker->sentence(6, true);
         $fio = $this->faker->name($gender = 'male'|'female');
-        $role = $this->faker->sentence(6, true);
+        $role = $this->faker->numberBetween(1,2);
         $about = $this->faker->sentence(30, true);
         $photo = '/img/1.png';
 

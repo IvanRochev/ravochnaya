@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('url', 255);
             $table->bigInteger('event_id');
-            $table->enum('type', ['external_link', 'local_storage'])->comment('Type of content storage');
+            $table->integer('type');
             $table->boolean('deleted')->default(0);
             $table->timestamps();
         });

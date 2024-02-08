@@ -16,7 +16,7 @@ class ResidentLinkFactory extends Factory
      */
     public function definition(): array
     {
-        $social = 'yt';     
+        $social = $this->faker->numberBetween(1,5);    
         $link = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
         return [

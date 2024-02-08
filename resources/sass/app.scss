@@ -1,8 +1,13 @@
-// Fonts
+// шрифты
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
-// Variables
+// переменные
 @import 'variables';
 
-// Bootstrap
+// Bootstrap и иконки
 @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// стили компонентов
+// @import 'modules/header';
+// @import 'modules/footer';

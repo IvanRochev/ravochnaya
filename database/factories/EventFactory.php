@@ -16,8 +16,12 @@ class EventFactory extends Factory
      */
     public function definition(): array
     {
+        $date = $this->faker->dateTime();
+        $name = $this->faker->sentence(7, true);
+
         return [
-            //
+            'date' => $date,
+            'name' => $name,
         ];
     }
 }

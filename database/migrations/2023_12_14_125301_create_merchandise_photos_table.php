@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('merchandise_photos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('merchandise_id');
-            $table->integer('position', false, true)->unique();
+            $table->integer('position', false, true);
             $table->string('url', 255);
             $table->string('name');
             $table->timestamps();

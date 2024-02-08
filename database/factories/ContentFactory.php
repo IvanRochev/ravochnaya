@@ -16,8 +16,14 @@ class ContentFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->sentence(25, true);
+        $url = '/img/1.png';
+        $type = 'local_storage';
+
         return [
-            //
+            'name' => $name,
+            'url' => $url,
+            'type' => $type,
         ];
     }
 }

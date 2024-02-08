@@ -16,8 +16,10 @@ class TagFactory extends Factory
      */
     public function definition(): array
     {
+        $tag = $this->faker->numerify('tag-######');
+
         return [
-            //
+            'tag' => $tag,        
         ];
     }
 }

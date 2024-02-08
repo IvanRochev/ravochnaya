@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('resident_links', function (Blueprint $table) {
             $table->id();
-            $table->string('social');
+            $table->enum('social', ['vk', 'yt', 'tg', 'inst', 'scloud']);
             $table->string('link', 255);
             $table->bigInteger('resident_id');
             $table->timestamps();

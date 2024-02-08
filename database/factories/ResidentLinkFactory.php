@@ -16,8 +16,12 @@ class ResidentLinkFactory extends Factory
      */
     public function definition(): array
     {
+        $social = 'yt';     
+        $link = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
         return [
-            //
+            'social' => $social,
+            'link' => $link,
         ];
     }
 }

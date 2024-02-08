@@ -16,8 +16,14 @@ class MerchandisePhotoFactory extends Factory
      */
     public function definition(): array
     {
+        $position = $this->faker->randomNumber(1, true);
+        $url = '/img/1.png';
+        $name = $this->faker->sentence(6, true);
+
         return [
-            //
+            'position' => $position,
+            'url' => $url,
+            'name' => $name,
         ];
     }
 }

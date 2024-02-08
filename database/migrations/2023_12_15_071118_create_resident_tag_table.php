@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('residents_tags', function (Blueprint $table) {
+        Schema::create('resident_tag', function (Blueprint $table) {
             /// описание pivot отношений до 7 лары ///
             // $table->unsignedBigInteger('resident_id');
             // $table->foreign('resident_id')->references('id')->on('residents');

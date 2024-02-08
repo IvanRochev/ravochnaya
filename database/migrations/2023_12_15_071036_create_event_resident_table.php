@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events_tags', function (Blueprint $table) {
+        Schema::create('event_resident', function (Blueprint $table) {
             /// описание pivot отношений до 7 лары ///
             // $table->unsignedBigInteger('event_id');
             // $table->foreign('event_id')->references('id')->on('events');
-            // $table->unsignedBigInteger('tag_id');
-            // $table->foreign('tag_id')->references('id')->on('tags');
+            // $table->unsignedBigInteger('resident_id');
+            // $table->foreign('resident_id')->references('id')->on('residents');
 
             /// их рефактор для актуальных версий/// 
             $table->foreignId('event_id')->constrained();
-            $table->foreignId('tag_id')->constrained();
+            $table->foreignId('resident_id')->constrained();
+
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events_tags');
+        Schema::dropIfExists('events_residents');
     }
 };

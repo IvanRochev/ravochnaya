@@ -16,8 +16,14 @@ class MerchandiseFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->sentence(6, true);
+        $about = $this->faker->sentence(20, true);
+        $price = $this->faker->randomNumber(4, true);
+
         return [
-            //
+            'name' => $name,
+            'about' => $about,
+            'price' => $price,
         ];
     }
 }

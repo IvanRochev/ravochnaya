@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Модель резидентов
+ */
+
 class Resident extends Model
 {
     use HasFactory;
@@ -12,6 +16,7 @@ class Resident extends Model
     protected $fillable = [
         'nickname',
         'fio',
+        'role',
         'about',
         'photo'
     ];

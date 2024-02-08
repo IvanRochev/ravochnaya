@@ -20,6 +20,10 @@ class Event extends Model
         'active'
     ];
 
+    protected $casts = [
+        'date' => 'datetime:Y-m-d',
+    ];
+
     public function contents() {
         return $this->hasMany(Content::class);
     }
@@ -30,5 +34,17 @@ class Event extends Model
 
     public function tags() {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function readableDate(){
+        return $this->date->diffForHumans();
+    }
+
+    public function scopeGetLastEvents($query, $numbers){
+        return $query->with('tags')->where('active', 1)
+            ->where('deleted', 0)
+            ->orderBy('date')
+            ->take($numbers)
+            ->get();
     }
 }

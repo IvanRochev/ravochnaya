@@ -23,4 +23,11 @@ class Content extends Model
     public function events() {
         return $this->belongsTo(Event::class);
     }
+
+    public function scopeGetLastContent($query, $numbers){
+        return $query->where('deleted', 0)
+            ->orderBy('created_at')
+            ->take($numbers)
+            ->get();
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,7 +17,7 @@ class EventFactory extends Factory
      */
     public function definition(): array
     {
-        $date = $this->faker->dateTime();
+        $date = Carbon::now();
         $name = $this->faker->sentence(7, true);
 
         return [

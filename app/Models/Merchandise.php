@@ -24,4 +24,12 @@ class Merchandise extends Model
     public function merchandises_photos() {
         return $this->hasMany(MerchandisePhoto::class);
     }
+
+    public function scopeGetLastMerchendise($query, $numbers){
+        return $query->with('merchandises_photos')->where('active', 1)
+            ->where('deleted', 0)
+            ->orderBy('created_at')
+            ->take($numbers)
+            ->get();
+    }
 }

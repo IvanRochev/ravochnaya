@@ -8,18 +8,16 @@ use App\Http\Controllers\MerchendisesController;
 use Illuminate\Http\Request;
 
 /**
- * Контроллер лейаута домашней страницы
- * 1) ивенты
- * 2) 
+ * Контроллер лейаута домашней страницы 
  */
 
 class HomeController extends Controller
 {
     public function index() {
-        $content = ContentController::getHomeScope();
-        $events = EventsController::getHomeScope();
-        $merchendise = MerchendisesController::getHomeScope();
+        $content = ContentController::getContentHomeScope();
+        $events = EventsController::getEventsHomeScope();
+        $merchendise = MerchendisesController::getMerchendiseHomeScope();
         
-        return view('app.home');
+        return view('frontend.home', compact('content', 'events', 'merchendise'));
     }
 }

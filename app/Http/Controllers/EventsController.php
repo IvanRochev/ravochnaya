@@ -7,9 +7,16 @@ use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
-    public static function getHomeScope(){
-        $events = new Event();
-        
-        //$home_scope = Event::
+    public function index() {
+        return view('frontend.events');
+    }
+
+    public static function getEventsHomeScope(){
+        $events = Event::where('active', 1)
+            ->where('deleted', 0)
+            ->orderBy('date')
+            ->take(4)
+            ->get();
+        return $events;
     }
 }

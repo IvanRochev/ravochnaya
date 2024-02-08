@@ -14,7 +14,8 @@ class Tag extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tag'
+        'tag',
+        'deleted'
     ];
 
     public $timestamps = false;

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('role');
             $table->text('about')->nullable();
             $table->string('photo', 255);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

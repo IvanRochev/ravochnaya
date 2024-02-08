@@ -16,6 +16,7 @@ return new class extends Migration
             $table->enum('social', ['vk', 'yt', 'tg', 'inst', 'scloud']);
             $table->string('link', 255);
             $table->bigInteger('resident_id');
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

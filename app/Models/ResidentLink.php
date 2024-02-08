@@ -16,7 +16,8 @@ class ResidentLink extends Model
     protected $fillable = [
         'social',
         'link',
-        'resident_id'
+        'resident_id',
+        'deleted'
     ];
 
     public function residents() {

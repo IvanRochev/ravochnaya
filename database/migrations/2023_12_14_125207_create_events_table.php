@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->string('name')->unique();
+            $table->boolean('deleted')->default(0);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

@@ -17,7 +17,8 @@ class MerchandisePhoto extends Model
         'merchandise_id',
         'position',
         'url',
-        'name'
+        'name',
+        'deleted'
     ];
 
     public function merchandises() {

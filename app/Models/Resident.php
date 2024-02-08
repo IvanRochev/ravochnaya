@@ -18,7 +18,8 @@ class Resident extends Model
         'fio',
         'role',
         'about',
-        'photo'
+        'photo',
+        'deleted'
     ];
 
     public function events() {

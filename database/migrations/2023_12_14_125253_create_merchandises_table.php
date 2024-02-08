@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('about')->nullable();
             $table->bigInteger('price', false, true);
+            $table->boolean('deleted')->default(0);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

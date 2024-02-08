@@ -16,7 +16,9 @@ class Merchandise extends Model
     protected $fillable = [
         'name',
         'about',
-        'price'
+        'price',
+        'deleted',
+        'active'
     ];
 
     public function merchandises_photos() {

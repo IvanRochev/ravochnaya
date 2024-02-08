@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('position', false, true);
             $table->string('url', 255);
             $table->string('name');
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

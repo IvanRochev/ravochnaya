@@ -15,7 +15,9 @@ class Event extends Model
 
     protected $fillable = [
         'date',
-        'name'
+        'name',
+        'deleted',
+        'active'
     ];
 
     public function contents() {

@@ -16,7 +16,8 @@ class Content extends Model
     protected $fillable = [
         'name',
         'url',
-        'type' 
+        'type',
+        'deleted'
     ];
 
     public function events() {

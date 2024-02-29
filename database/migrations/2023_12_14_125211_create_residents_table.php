@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('about')->nullable();
             $table->string('photo', 255);
             $table->boolean('deleted')->default(0);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

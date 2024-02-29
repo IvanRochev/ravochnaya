@@ -27,4 +27,8 @@ class Tag extends Model
     public function residents() {
         return $this->belongsToMany(Resident::class);
     }
+
+    public function articles() {
+        return $this->belongsToMany(Article::class);
+    }
 }

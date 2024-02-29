@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('event_id');
             $table->integer('type');
             $table->boolean('deleted')->default(0);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

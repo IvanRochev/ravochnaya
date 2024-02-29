@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class ContentController extends Controller
 {
     public function index() {
-        return view('frontend.content');
+        $contents = Content::GetAllContentPaginate(4);
+        return view('frontend.content', compact('contents'));
     }
 }

@@ -36,6 +36,10 @@ class Event extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function articles() {
+        return $this->belongsToMany(Article::class);
+    }
+
     public function readableDate(){
         return $this->date->diffForHumans();
     }

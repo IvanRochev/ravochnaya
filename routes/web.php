@@ -6,3 +6,4 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->name('events_page');
 Route::get('/merchendises', [App\Http\Controllers\MerchendisesController::class, 'index'])->name('merchendises_page');
 Route::get('/team', [App\Http\Controllers\ResidentsController::class, 'index'])->name('residents_page');
+Route::get('/testcontent', [App\Http\Controllers\ContentController::class, 'index'])->name('content_page');

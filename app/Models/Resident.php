@@ -19,7 +19,8 @@ class Resident extends Model
         'role',
         'about',
         'photo',
-        'deleted'
+        'deleted',
+        'active'
     ];
 
     public function events() {
@@ -32,5 +33,9 @@ class Resident extends Model
 
     public function resident_links() {
         return $this->hasMany(ResidentLink::class);
+    }
+
+    public function articles() {
+        return $this->belongsToMany(Article::class);
     }
 }

@@ -17,7 +17,8 @@ class Content extends Model
         'name',
         'url',
         'type',
-        'deleted'
+        'deleted',
+        'active'
     ];
 
     public function events() {
@@ -29,5 +30,11 @@ class Content extends Model
             ->orderBy('created_at')
             ->take($numbers)
             ->get();
+    }
+
+    public function scopeGetAllContentPaginate($query, $numbers){
+        return $query->where('deleted', 0)
+            ->orderBy('created_at', 'desc')
+            ->paginate($numbers);
     }
 }

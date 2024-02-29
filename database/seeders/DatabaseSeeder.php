@@ -17,10 +17,12 @@ class DatabaseSeeder extends Seeder
         $residents = \App\Models\Resident::factory(15)->create();
         $merchandises = \App\Models\Merchandise::factory(4)->create();
         $tags = \App\Models\Tag::factory(12)->create();
+        $articles = \App\Models\Article::factory(12)->create();
 
         //тянем primary ключи
         $residents_id = $residents->pluck('id');
         $tags_id = $tags->pluck('id');
+        $events_id = $events->pluck('id'); 
 
         //создаём вторичные записи через отношения
         $events->each(function ($event) use ($residents_id, $tags_id){
@@ -47,6 +49,13 @@ class DatabaseSeeder extends Seeder
             \App\Models\MerchandisePhoto::factory(5)->create([
                 'merchandise_id' => $merchandise->id,
             ]);
+        });
+
+        $articles->each(function ($article) use ($residents_id, $tags_id, $events_id){
+            //линкуем рандомные теги и резиденты для каждой статьи через pivot 
+            $article->residents()->attach($residents_id->random(5));
+            $article->tags()->attach($tags_id->random(3));
+            $article->events()->attach($events_id->random(3));
         });
     }
 }
